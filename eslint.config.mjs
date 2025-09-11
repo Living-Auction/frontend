@@ -30,18 +30,28 @@ export default [
       'import/order': [
         'error',
         {
-          groups: [
-            'builtin',
-            'external',
-            'internal',
-            ['parent', 'sibling'],
-            'index',
-          ],
+          groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index'],
           'newlines-between': 'always',
           alphabetize: {
             order: 'asc',
             caseInsensitive: true,
           },
+        },
+      ],
+      'import/no-restricted-paths': [
+        'error',
+        {
+          zones: [
+            { target: './src/shared', from: './src/app' },
+            { target: './src/shared', from: './src/widgets' },
+            { target: './src/shared', from: './src/features' },
+            { target: './src/shared', from: './src/entities' },
+            { target: './src/entities', from: './src/app' },
+            { target: './src/entities', from: './src/widgets' },
+            { target: './src/entities', from: './src/features' },
+            { target: './src/features', from: './src/app' },
+            { target: './src/features', from: './src/widgets' },
+          ],
         },
       ],
     },
