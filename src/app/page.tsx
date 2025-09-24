@@ -1,7 +1,15 @@
+import Navigation from '@component/footer/navigation';
+
 export default function Home() {
   return (
     <div>
-      <h2 className='text-title'>메인페이지</h2>
+      <header></header>
+      <section>
+        <h2 className='text-title'>메인페이지</h2>
+      </section>
+      <footer>
+        <Navigation />
+      </footer>
     </div>
   );
 }
