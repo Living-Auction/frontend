@@ -1,5 +1,5 @@
 import MainHeader from '@/widgets/header/ui/main';
-import Navigation from '@component/footer/navigation';
+import Navigation from '@/widgets/footer/ui/navigation';
 
 export default function Home() {
   return (

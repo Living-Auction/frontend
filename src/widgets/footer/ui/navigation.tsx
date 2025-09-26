@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Fragment } from 'react';
 import { cn, tv } from 'tailwind-variants/lite';
+import BaseFooter from './base';
 
 const NAV_LINKS = [
   {
@@ -49,11 +50,7 @@ const Navigation = () => {
   const pathname = usePathname();
 
   return (
-    <div
-      className={cn(
-        'w-full h-22 absolute bottom-0 rounded-t-2xl pt-2 pb-6 flex px-4 justify-between bg-white shadow-lg items-center',
-      )}
-    >
+    <BaseFooter>
       {NAV_LINKS.map((link, idx) => {
         const isActive = pathname === link.href;
         const IconComponent = link.icon;
@@ -79,7 +76,7 @@ const Navigation = () => {
           </Fragment>
         );
       })}
-    </div>
+    </BaseFooter>
   );
 };
 
