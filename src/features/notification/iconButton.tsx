@@ -1,4 +1,4 @@
-import IconButton from '@component/button/iconButton';
+import IconButton from '@/shared/ui/component/icon-button';
 import { Bell } from 'lucide-react';
 
 const NotificationIconButton = () => {

@@ -1,5 +1,5 @@
 import { paths } from '@/shared/config/paths';
-import { IconButtonStyle } from '@component/button/iconButton';
+import { IconButtonStyle } from '@/shared/ui/component/icon-button';
 import { Search } from 'lucide-react';
 import Link from 'next/link';
 
