@@ -1,16 +1,11 @@
-import MainHeader from '@/widgets/header/ui/main';
-import Navigation from '@/widgets/footer/ui/navigation';
+import MainLayout from '@/widgets/layout/ui/main';
 
 export default function Home() {
   return (
-    <div>
-      <MainHeader />
+    <MainLayout>
       <section>
         <h2 className='text-title'>메인페이지</h2>
       </section>
-      <footer>
-        <Navigation />
-      </footer>
-    </div>
+    </MainLayout>
   );
 }
