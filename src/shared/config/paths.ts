@@ -14,4 +14,7 @@ export const paths = {
   profile() {
     return '/profile';
   },
+  search() {
+    return '/search';
+  },
 };
