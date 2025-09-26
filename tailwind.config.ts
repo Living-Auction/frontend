@@ -7,6 +7,12 @@ const config = {
     './src/widgets/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '912px',
+      xl: '1024px',
+    },
     extend: {
       colors: {
         background: '#ffffff',
