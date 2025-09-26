@@ -6,7 +6,7 @@ import { tv } from 'tailwind-variants/lite';
 import { MAIN_LOCATIONS } from '@/shared/config/location';
 import { Location } from '@/entities/location/model/types';
 import { ChevronDown } from 'lucide-react';
-import UseOnClickOutside from '@/shared/lib/hooks/useOnClickOutside';
+import useOnClickOutside from '@/shared/lib/hooks/use-onclick-outside';
 
 const SelectListStyle = tv({
   base: 'text-subtitle w-full',
@@ -29,7 +29,7 @@ const MainLocationSelector = () => {
   const selectorRef = useRef<HTMLDivElement>(null!);
   const triggerRef = useRef<HTMLButtonElement>(null!);
 
-  UseOnClickOutside(selectorRef, () => {
+  useOnClickOutside(selectorRef, () => {
     setIsOpen(false);
     triggerRef.current?.focus();
   });

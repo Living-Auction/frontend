@@ -1,6 +1,6 @@
-import MainLocationSelector from '@/features/location/mainSelector';
-import NotificationIconButton from '@/features/notification/iconButton';
-import SearchIconButton from '@/features/search/iconButton';
+import MainLocationSelector from '@/features/location/main-selector';
+import NotificationIconButton from '@/features/notification/icon-button';
+import SearchIconButton from '@/features/search/icon-button';
 import BaseHeader from './base';
 
 const MainHeader = () => {
