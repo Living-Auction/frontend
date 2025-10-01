@@ -1,6 +1,6 @@
-import PageTitle from '@component/page-title';
-import GoBackButton from '@/features/common/go-back-button';
-import Popover from '@/features/common/popover';
+import GoBackButton from '@/widgets/header/ui/go-back-button';
+import PageTitle from '@/widgets/header/ui/page-title';
+import Popover from '@/widgets/header/ui/pop-over';
 import BaseHeader from './base';
 
 const AuctionDetailHeader = () => {

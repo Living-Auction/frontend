@@ -24,7 +24,7 @@ const OpenStyle = tv({
   },
 });
 
-const Popover = ({ types }: { types: PopoverItemType[] }) => {
+const PopOver = ({ types }: { types: PopoverItemType[] }) => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef<HTMLDivElement>(null!);
   const triggerRef = useRef<HTMLButtonElement>(null!);
@@ -90,4 +90,4 @@ const Popover = ({ types }: { types: PopoverItemType[] }) => {
   );
 };
 
-export default Popover;
+export default PopOver;
