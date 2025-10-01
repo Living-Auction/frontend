@@ -1,5 +1,11 @@
+import AuctionDetailHeader from '@widgets/header/ui/auction-detail';
+
 const AuctionDetail = () => {
-  return <div>AuctionDetail</div>;
+  return (
+    <>
+      <AuctionDetailHeader />
+    </>
+  );
 };
 
 export default AuctionDetail;
