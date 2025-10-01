@@ -1,0 +1,30 @@
+import Image from 'next/image';
+import { tv } from 'tailwind-variants';
+import { THUMBNAIL_SIZE_MAP } from '@/shared/config/image';
+
+const thumbnail = tv({
+  base: 'relative overflow-hidden bg-gray-100 rounded-md',
+  variants: {
+    size: {
+      sm: 'w-16 h-16',
+      md: 'w-24 h-24',
+      lg: 'w-32 h-32',
+    },
+  },
+});
+
+interface Props {
+  size: 'sm' | 'md' | 'lg';
+  src: string;
+  alt: string;
+}
+
+const Thumbnail = ({ size, src, alt }: Props) => {
+  return (
+    <div className={thumbnail({ size })}>
+      <Image src={src} alt={alt} fill className='object-cover' sizes={THUMBNAIL_SIZE_MAP[size]} />
+    </div>
+  );
+};
+
+export default Thumbnail;
