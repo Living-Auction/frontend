@@ -1,6 +1,6 @@
-import MainHeader from '@/widgets/header/ui/main';
-import Navigation from '@/widgets/footer/ui/navigation';
 import Categories from '@/features/category/categories';
+import Navigation from '@/widgets/footer/ui/navigation';
+import MainHeader from '@/widgets/header/ui/main';
 
 export default function Home() {
   return (

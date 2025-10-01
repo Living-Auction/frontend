@@ -1,7 +1,7 @@
+import Link from 'next/link';
+import { Search } from 'lucide-react';
 import { paths } from '@/shared/config/paths';
 import { IconButtonStyle } from '@/shared/ui/component/icon-button';
-import { Search } from 'lucide-react';
-import Link from 'next/link';
 
 const SearchIconButton = () => {
   return (

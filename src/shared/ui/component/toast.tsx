@@ -1,5 +1,5 @@
-import { tv } from 'tailwind-variants';
 import { X } from 'lucide-react';
+import { tv } from 'tailwind-variants';
 
 const toast = tv({
   slots: {
