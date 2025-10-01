@@ -1,6 +1,7 @@
 import Thumbnail from '@component/thumbnail';
 import { tv } from 'tailwind-variants';
 import { TYPE_TO_SIZE } from '@/entities/product/model/constants';
+import ProductThumbnail from '@/entities/product/ui/product-thumbnail';
 import FavoriteButton from '@/features/favorite/ui/favorite-button';
 
 const productCard = tv({
@@ -34,10 +35,7 @@ const ProductCard = ({ type, product }: Props) => {
 
   return (
     <div className={base()}>
-      <div className='relative inline-block'>
-        <Thumbnail size={thumbnailSize} src={thumbnail} alt='thumbnail' />
-        <FavoriteButton initialFavorite={false} className='absolute top-2 right-2' />
-      </div>
+      <ProductThumbnail thumbnailSize={thumbnailSize} thumbnail={thumbnail} />
       <div className={info()}>
         <span className='text-body font-bold line-clamp-2'>{title}</span>
         <div className='flex flex-col gap-1'>
