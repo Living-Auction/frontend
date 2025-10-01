@@ -1,11 +1,11 @@
 'use client';
 
-import { paths } from '@/shared/config/paths';
-import { Home, BookHeart, Plus, MessagesSquare, UserRound, Divide } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Fragment } from 'react';
+import { Home, BookHeart, Plus, MessagesSquare, UserRound } from 'lucide-react';
 import { cn, tv } from 'tailwind-variants/lite';
+import { paths } from '@/shared/config/paths';
 import BaseFooter from './base';
 
 const NAV_LINKS = [
