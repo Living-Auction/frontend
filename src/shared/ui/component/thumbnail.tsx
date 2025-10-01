@@ -8,7 +8,7 @@ const thumbnail = tv({
     size: {
       sm: 'w-16 h-16',
       md: 'w-24 h-24',
-      lg: 'w-32 h-32',
+      lg: 'w-37 h-37',
     },
   },
 });
