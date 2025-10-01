@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { tv } from 'tailwind-variants/lite';
-import { MAIN_LOCATIONS } from '@/shared/config/location';
-import { Location } from '@/entities/location/model/types';
+import { useEffect, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { tv } from 'tailwind-variants/lite';
+import { Location } from '@/entities/location/model/types';
+import { MAIN_LOCATIONS } from '@/shared/config/location';
 import useOnClickOutside from '@/shared/lib/hooks/use-onclick-outside';
 
 const SelectListStyle = tv({
@@ -14,7 +14,7 @@ const SelectListStyle = tv({
 });
 
 const OpenStyle = tv({
-  base: 'z-50 bg-white relative top-1 left-0 shadow-lg w-full p-4 rounded-md flex flex-col gap-3 transition-scale duration-300 delay-50 ease-in-out origin-top-left visibility-hidden',
+  base: 'z-20 bg-background relative top-1 left-0 shadow-lg w-full p-4 rounded-md flex flex-col gap-3 transition-scale duration-300 delay-50 ease-in-out origin-top-left visibility-hidden',
   variants: {
     open: {
       true: 'opacity-100 scale-100 visibility-visible',
@@ -57,9 +57,9 @@ const MainLocationSelector = () => {
       <button
         type='button'
         className='flex items-center w-45 h-full text-title cursor-pointer'
-        ref={triggerRef}
         onClick={() => setIsOpen(!isOpen)}
         value={selectedLocation?.id}
+        ref={triggerRef}
         role='location-selector'
         aria-haspopup='listbox'
         aria-expanded={isOpen}

@@ -25,7 +25,7 @@ const config = {
           900: '#40BBED',
         },
         negative: {
-          500: '#DF6556',
+          900: '#DF6556',
         },
         gray: {
           100: '#F2F3F3',
