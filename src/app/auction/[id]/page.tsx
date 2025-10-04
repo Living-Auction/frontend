@@ -6,7 +6,7 @@ const AuctionDetail = () => {
     <>
       <AuctionDetailHeader />
       <Carousel auctionId={'test-id-121231234'} />
-      <article>
+      <article className='bg-back'>
         <section>overview</section>
         <section>profile card</section>
         <section>detail contents: text & bid-status-table</section>
