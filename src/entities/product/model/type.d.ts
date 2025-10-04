@@ -3,6 +3,9 @@
 interface Product {
   title: string;
   thumbnail: string;
+  images: string[];
   endDate: string;
   currentPrice: string;
+  favorites: number;
+  view: number;
 }
