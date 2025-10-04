@@ -7,5 +7,5 @@ interface Product {
   endDate: string;
   currentPrice: string;
   favorites: number;
-  view: number;
+  views: number;
 }

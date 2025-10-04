@@ -16,5 +16,5 @@ export const PRODUCT_DUMMY: Product = {
   endDate: '2025.12.31',
   currentPrice: '999,999,999',
   favorites: 8,
-  view: 63,
+  views: 63,
 };
