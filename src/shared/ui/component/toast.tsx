@@ -16,9 +16,9 @@ const toast = tv({
         close: 'bg-primary-100 [&>svg]:text-primary-900',
       },
       error: {
-        base: 'bg-background shadow-negative-500/10',
-        title: 'text-negative-500',
-        close: 'bg-negative-500/10 [&>svg]:text-negative-500',
+        base: 'bg-background shadow-negative-900/10 ',
+        title: 'text-negative-900',
+        close: 'bg-negative-900/10 [&>svg]:text-negative-900',
       },
       notice: {
         base: 'bg-gray-900 opacity-80 shadow-gray-700/20',
