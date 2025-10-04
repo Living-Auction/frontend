@@ -21,8 +21,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@component/*": ["./src/shared/ui/component/*"],
-      "@widgets/*": ["./src/widgets/*"]
+      "@widgets/*": ["./src/widgets/*"],
+      "@features/*": ["./src/features"],
+      "@entities/*": ["./src/entities/*"],
+      "@shared/*": ["./src/shared"],
+      "@component/*": ["./src/shared/ui/component/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "tailwind.config.ts"],
