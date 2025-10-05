@@ -2,17 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { getAuctionImagesById } from '@/entities/auction/api';
-import { AuctionImage } from '@/entities/auction/model/types';
+import { getAuctionImagesById } from '@/widgets/carousel/api';
+import { ImageUrlType } from '@/widgets/carousel/model/type';
 import CarouselIndicator from './indicator';
 import { useCarousel } from '../lib/useCarousel';
 
 interface CarouselProps {
   auctionId: string;
+  name: string;
 }
 
-const Carousel = ({ auctionId }: CarouselProps) => {
-  const [images, setImages] = useState<AuctionImage[]>([]);
+const Carousel = ({ auctionId, name }: CarouselProps) => {
+  const [images, setImages] = useState<ImageUrlType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const { currentIndex, goTo, handleSwipeEnd } = useCarousel({ totalItems: images.length });
@@ -46,11 +47,11 @@ const Carousel = ({ auctionId }: CarouselProps) => {
               animate={{ x: `-${currentIndex * 100}%` }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
-              {images.map((image) => (
-                <div key={image.id} className='h-full w-full flex-shrink-0'>
+              {images.map((image, idx) => (
+                <div key={idx} className='h-full w-full flex-shrink-0'>
                   <img
-                    src={image.url}
-                    alt={'auction image'}
+                    src={image}
+                    alt={`${name}_${idx + 1}`}
                     className='h-full w-full object-cover'
                     onDragStart={(e) => e.preventDefault()}
                   />
