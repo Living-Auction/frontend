@@ -25,7 +25,10 @@ const config = {
           900: '#40BBED',
         },
         negative: {
-          900: '#DF6556',
+          900: '#DC5545',
+        },
+        positive: {
+          900: '#3AAB63',
         },
         gray: {
           100: '#F2F3F3',
