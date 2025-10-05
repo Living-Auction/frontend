@@ -1,5 +1,5 @@
+import Carousel from '@widgets/carousel/ui/carousel';
 import AuctionDetailHeader from '@widgets/header/ui/auction-detail';
-import Carousel from '@/widgets/carousel/ui/carousel';
 
 const AuctionDetail = () => {
   return (
