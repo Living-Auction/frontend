@@ -15,3 +15,15 @@ interface Product {
   favorites: number;
   views: number;
 }
+
+interface TEST_Product {
+  id: string;
+  title: string;
+  thumbnail: string;
+  images: string[];
+  startDate: string;
+  endDate: string;
+  currentPrice: string;
+  favorites: number;
+  views: number;
+}
