@@ -1,10 +1,8 @@
-import Thumbnail from '@component/thumbnail';
 import { tv } from 'tailwind-variants';
 import { TYPE_TO_SIZE } from '@/entities/product/model/constants';
 import ProductThumbnail from '@/entities/product/ui/product-thumbnail';
-import FavoriteButton from '@/features/favorite/ui/favorite-button';
 
-const productCard = tv({
+const productCardStyle = tv({
   slots: {
     base: 'flex gap-2',
     info: 'flex flex-col gap-1 justify-between',
@@ -25,12 +23,12 @@ const productCard = tv({
 
 interface Props {
   type: 'vertical' | 'horizontal';
-  product: Product;
+  product: ProductCard;
 }
 
 const ProductCard = ({ type, product }: Props) => {
   const thumbnailSize = TYPE_TO_SIZE[type];
-  const { base, info } = productCard({ type });
+  const { base, info } = productCardStyle({ type });
   const { title, thumbnail, endDate, currentPrice } = product;
 
   return (
