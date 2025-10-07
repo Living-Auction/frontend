@@ -44,6 +44,7 @@ const config = {
       fontSize: {
         title: ['22px', { lineHeight: '1.4', fontWeight: '700' }],
         subtitle: '18px',
+        bodytitle: '16px',
         body: '14px',
         caption: '12px',
       },

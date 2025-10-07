@@ -22,9 +22,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@widgets/*": ["./src/widgets/*"],
-      "@features/*": ["./src/features"],
+      "@features/*": ["./src/features/*"],
       "@entities/*": ["./src/entities/*"],
-      "@shared/*": ["./src/shared"],
+      "@shared/*": ["./src/shared/*"],
       "@component/*": ["./src/shared/ui/component/*"]
     }
   },
