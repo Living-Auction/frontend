@@ -4,7 +4,7 @@ import { useFormattedDate } from '@/shared/lib/hooks/use-formatted-date';
 import Countdown from './countdown';
 import PendingTimer from './pending-timer';
 
-const AuctionTimer = () => {
+const ProductTimer = () => {
   const { startDate, endDate } = TEST_PRODUCT;
   const formattedEndTime = useFormattedDate(endDate);
   const { year, month, day, hour, minute } = formattedEndTime;
@@ -28,4 +28,4 @@ const AuctionTimer = () => {
   );
 };
 
-export default AuctionTimer;
+export default ProductTimer;
