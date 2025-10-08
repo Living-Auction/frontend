@@ -8,15 +8,6 @@ interface ProductCard {
 }
 
 interface Product {
-  title: string;
-  images: string[];
-  endDate: string;
-  currentPrice: string;
-  favorites: number;
-  views: number;
-}
-
-interface TEST_Product {
   id: string;
   title: string;
   thumbnail: string;
