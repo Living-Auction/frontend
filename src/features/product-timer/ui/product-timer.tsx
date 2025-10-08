@@ -1,11 +1,11 @@
 import { cn } from 'tailwind-variants/lite';
-import { TEST_PRODUCT } from '@/entities/product/model/constants';
+import { PRODUCT_DUMMY } from '@/entities/product/model/constants';
 import { useFormattedDate } from '@/shared/lib/hooks/use-formatted-date';
 import Countdown from './countdown';
 import PendingTimer from './pending-timer';
 
 const ProductTimer = () => {
-  const { startDate, endDate } = TEST_PRODUCT;
+  const { startDate, endDate } = PRODUCT_DUMMY;
   const formattedEndTime = useFormattedDate(endDate);
   const { year, month, day, hour, minute } = formattedEndTime;
 
