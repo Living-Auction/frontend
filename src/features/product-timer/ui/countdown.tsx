@@ -3,9 +3,10 @@
 import { useEffect, useState } from 'react';
 import { tv } from 'tailwind-variants/lite';
 import { formatNumber, useCountdown } from '../lib/use-countdown';
+import { AuctionStatus } from '../model/types';
 
 interface CountdownProps {
-  status: 'ACTIVE' | 'CLOSED';
+  status: AuctionStatus;
   endTime: string;
 }
 
