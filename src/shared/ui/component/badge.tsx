@@ -8,7 +8,7 @@ interface BadgeProps {
 }
 
 const BadgeStyle = tv({
-  base: 'font-medium text-body px-2 pt-1 pb-[2px] rounded-sm cursor-default',
+  base: 'font-medium text-body px-2 pt-1 pb-[2px] rounded-sm cursor-default w-fit',
   variants: {
     type: {
       active: 'bg-primary-900 text-white',

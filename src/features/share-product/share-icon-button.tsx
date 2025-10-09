@@ -3,7 +3,7 @@
 import { Share2 } from 'lucide-react';
 import IconButton from '@/shared/ui/component/icon-button';
 
-const ShareIconButton = () => {
+const ShareIconButton = ({ className }: { className?: string }) => {
   const onClickHandler = () => {
     const url = window.location.href;
 
@@ -20,7 +20,7 @@ const ShareIconButton = () => {
 
   return (
     <IconButton
-      className='size-9 bg-primary-300 text-primary-900 rounded-full flex justify-center items-center'
+      className={`size-9 bg-primary-300 text-primary-900 rounded-full flex justify-center items-center ${className}`}
       onClick={onClickHandler}
     >
       <Share2 size={'20'} />

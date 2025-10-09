@@ -1,3 +1,5 @@
+import { Product, ProductCard } from './type';
+
 export const TYPE_TO_SIZE = {
   vertical: 'lg',
   horizontal: 'md',
@@ -24,4 +26,5 @@ export const PRODUCT_DUMMY: Product = {
   currentPrice: '123,999',
   favorites: 8,
   views: 63,
+  status: 'CLOSED',
 };
