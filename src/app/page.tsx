@@ -1,15 +1,22 @@
+import Carousel from '@widgets/carousel/ui/carousel';
+import EndingSoonProductList from '@widgets/product-list/ui/ending-soon-product-list';
+import HotProductList from '@widgets/product-list/ui/hot-product-list';
+import LatestProductList from '@widgets/product-list/ui/latest-product-list';
 import Categories from '@/features/category/categories';
 import Navigation from '@/widgets/footer/ui/navigation';
 import MainHeader from '@/widgets/header/ui/main';
 
 export default function Home() {
   return (
-    <div className='relative bg-background md:max-w-md mx-auto min-h-screen w-full flex flex-col'>
+    <div className='relative overflow-hidden bg-background md:max-w-md mx-auto min-h-screen w-full flex flex-col'>
       <MainHeader />
-      <section className='flex flex-col items-center justify-center gap-4 px-4'>
+      <main className='mt-13 mb-22 gap-6 flex flex-col px-4 py-2 w-full overflow-y-auto overscroll-contain'>
         <Categories />
-        <h2 className='text-title'>메인페이지</h2>
-      </section>
+        <HotProductList />
+        <EndingSoonProductList />
+        <Carousel auctionId={''} name={''} />
+        <LatestProductList />
+      </main>
       <Navigation />
     </div>
   );

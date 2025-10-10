@@ -3,11 +3,11 @@ import CategoryButton from '@/entities/category/ui/category-button';
 
 const Categories = () => {
   return (
-    <div className='flex gap-4'>
+    <section className='w-full flex gap-4 overflow-x-auto no-scrollbar'>
       {CATEGORIES.map(({ type, label, icon: Icon }) => (
         <CategoryButton key={type} icon={<Icon />} label={label} />
       ))}
-    </div>
+    </section>
   );
 };
 
