@@ -1,5 +1,5 @@
-// TODO: 실제 연동되는 데이터명과 타입 일치 작업 필요
 export type AuctionStatus = 'PENDING' | 'ACTIVE' | 'CLOSED';
+
 interface ProductCard {
   title: string;
   thumbnail: string;
