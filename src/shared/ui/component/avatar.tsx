@@ -18,7 +18,7 @@ const Avatar = ({ size, img = null }: AvatarProps) => {
   return (
     <div className={`${AvatarStyle({ size: size })}`}>
       {!img && <AvatarDefault />}
-      {img && <img src={img.url} alt={img.url} />}
+      {img && <img src={img.url} alt={img.alt} />}
     </div>
   );
 };
