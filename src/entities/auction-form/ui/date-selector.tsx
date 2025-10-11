@@ -52,7 +52,7 @@ interface SelectDateProps {
   disabled?: boolean;
 }
 
-const SelectDate = ({ disabled = false }: SelectDateProps) => {
+const DateSelector = ({ disabled = false }: SelectDateProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState('1일 뒤 경매 종료 (셀렉트박스로)');
 
@@ -108,4 +108,4 @@ const SelectDate = ({ disabled = false }: SelectDateProps) => {
   );
 };
 
-export default SelectDate;
+export default DateSelector;
