@@ -5,7 +5,8 @@ import { ProfileCard } from '@/entities/user/ui/profile-card';
 import ProductOverview from '@/widgets/product/product-overview';
 
 const AuctionDetail = () => {
-  const { title, id, status, views, favorites, startDate, endDate, uuid } = PRODUCT_DUMMY;
+  const { title, id, status, views, favorites, startDate, endDate, uuid, tradeLocation } =
+    PRODUCT_DUMMY;
 
   return (
     <>
@@ -19,6 +20,7 @@ const AuctionDetail = () => {
           favorites={favorites}
           startDate={startDate}
           endDate={endDate}
+          tradeLocation={tradeLocation}
         />
         <ProfileCard uuid={uuid} />
         <section>detail contents: text & bid-status-table</section>

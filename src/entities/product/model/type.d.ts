@@ -19,4 +19,5 @@ interface Product {
   favorites: number;
   views: number;
   status: AuctionStatus;
+  tradeLocation: string;
 }

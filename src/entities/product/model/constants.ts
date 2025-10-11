@@ -28,4 +28,5 @@ export const PRODUCT_DUMMY: Product = {
   favorites: 8,
   views: 63,
   status: 'CLOSED',
+  tradeLocation: '서울특별시 강남구 역삼동',
 };

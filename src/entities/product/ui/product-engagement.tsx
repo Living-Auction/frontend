@@ -19,7 +19,7 @@ const ProductEngagement = ({ type, counts }: EngagementProps) => {
   return (
     <p className={cn(`text-body flex gap-1 items-center text-gray-500`)}>
       <IconComponent className='size-4' />
-      <strong className='mr-1'>{EngagementMaps[type].title}</strong>
+      <span className='mr-1'>{EngagementMaps[type].title}</span>
       {counts}
     </p>
   );
