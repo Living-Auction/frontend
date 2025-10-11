@@ -10,7 +10,7 @@ interface AvatarProps {
 }
 
 const AvatarStyle = tv({
-  base: 'aspect-square',
+  base: 'aspect-square overflow-hidden rounded-full',
   variants: { size: { basic: 'w-10', sm: 'w-7', lg: 'w-30' } },
 });
 
@@ -18,7 +18,7 @@ const Avatar = ({ size, img = null }: AvatarProps) => {
   return (
     <div className={`${AvatarStyle({ size: size })}`}>
       {!img && <AvatarDefault />}
-      {img && <img src={img.url} alt={img.alt} />}
+      {img && <img className='w-full h-full cover' src={img.url} alt={img.alt} />}
     </div>
   );
 };
