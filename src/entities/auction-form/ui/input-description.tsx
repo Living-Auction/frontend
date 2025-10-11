@@ -1,7 +1,7 @@
 const InputDescription = () => {
   return (
     <div className='flex flex-col gap-1.5'>
-      <label id='description' className='text-body font-bold text-gray-900'>
+      <label id='input-description' className='text-body font-bold text-gray-900'>
         상품 설명
       </label>
       <textarea
