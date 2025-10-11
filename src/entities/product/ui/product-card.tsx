@@ -1,3 +1,4 @@
+import { Product } from '@entities/product/model/type';
 import { tv } from 'tailwind-variants';
 import { TYPE_TO_SIZE } from '@/entities/product/model/constants';
 import ProductThumbnail from '@/entities/product/ui/product-thumbnail';
@@ -23,7 +24,7 @@ const productCardStyle = tv({
 
 interface Props {
   type: 'vertical' | 'horizontal';
-  product: ProductCard;
+  product: Product;
 }
 
 const ProductCard = ({ type, product }: Props) => {

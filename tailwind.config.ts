@@ -1,3 +1,5 @@
+import { PluginAPI } from 'tailwindcss/plugin';
+
 const config = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -60,7 +62,32 @@ const config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: PluginAPI) {
+      const newUtilities = {
+        '.no-scrollbar': {
+          '-ms-overflow-style': 'none', // IE, Edge
+          'scrollbar-width': 'none', // Firefox
+        },
+        '.no-scrollbar::-webkit-scrollbar': {
+          display: 'none', // Chrome, Safari, Edge
+        },
+        '.no-scrollbar-x': {
+          overflowX: 'scroll',
+        },
+        '.no-scrollbar-x::-webkit-scrollbar:horizontal': {
+          display: 'none',
+        },
+        '.no-scrollbar-y': {
+          overflowY: 'scroll',
+        },
+        '.no-scrollbar-y::-webkit-scrollbar:vertical': {
+          display: 'none',
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 };
 
 module.exports = config;

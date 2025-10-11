@@ -5,7 +5,7 @@ import BaseHeader from './base';
 
 const MainHeader = () => {
   return (
-    <BaseHeader>
+    <BaseHeader className='fixed top-0 left-0 right-0 md:max-w-md mx-auto z-20 bg-background'>
       <MainLocationSelector />
       <div className='flex gap-2'>
         <SearchIconButton />

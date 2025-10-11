@@ -50,7 +50,7 @@ const Navigation = () => {
   const pathname = usePathname();
 
   return (
-    <BaseFooter>
+    <BaseFooter className='fixed bottom-0 left-0 right-0 md:max-w-md z-20 bg-background'>
       {NAV_LINKS.map((link, idx) => {
         const isActive = pathname === link.href;
         const IconComponent = link.icon;
