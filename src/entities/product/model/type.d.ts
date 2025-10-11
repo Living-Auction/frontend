@@ -9,6 +9,7 @@ interface ProductCard {
 
 interface Product {
   id: string;
+  uuid: string;
   title: string;
   thumbnail: string;
   images: string[];

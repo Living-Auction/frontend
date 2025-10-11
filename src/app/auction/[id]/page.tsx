@@ -1,16 +1,17 @@
 import Carousel from '@widgets/carousel/ui/carousel';
 import AuctionDetailHeader from '@widgets/header/ui/auction-detail';
 import { PRODUCT_DUMMY } from '@/entities/product/model/constants';
+import { ProfileCard } from '@/entities/user/ui/profile-card';
 import ProductOverview from '@/widgets/product/product-overview';
 
 const AuctionDetail = () => {
-  const { title, id, status, views, favorites, startDate, endDate } = PRODUCT_DUMMY;
+  const { title, id, status, views, favorites, startDate, endDate, uuid } = PRODUCT_DUMMY;
 
   return (
     <>
       <AuctionDetailHeader />
       <Carousel auctionId={id} name={title} />
-      <article>
+      <article className='space-y-1'>
         <ProductOverview
           status={status}
           title={title}
@@ -19,7 +20,7 @@ const AuctionDetail = () => {
           startDate={startDate}
           endDate={endDate}
         />
-        <section>profile card</section>
+        <ProfileCard uuid={uuid} />
         <section>detail contents: text & bid-status-table</section>
         <footer>bid-banner</footer>
       </article>
