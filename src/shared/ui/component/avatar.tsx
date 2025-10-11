@@ -14,7 +14,7 @@ const AvatarStyle = tv({
   variants: { size: { basic: 'w-10', sm: 'w-7', lg: 'w-30' } },
 });
 
-const Avatar = ({ size, img = null }: AvatarProps) => {
+const Avatar = ({ size, img }: AvatarProps) => {
   return (
     <div className={`${AvatarStyle({ size: size })}`}>
       {!img && <AvatarDefault />}
