@@ -7,6 +7,7 @@ export const TYPE_TO_SIZE = {
 
 export const PRODUCT_DUMMY: Product = {
   id: '1234',
+  uuid: 'user-1234',
   title: '이것은 제가 직접 공수해온 겁니다 이 바보들아 내거야 다',
   thumbnail: 'https://picsum.photos/200/200',
   images: [
@@ -20,4 +21,5 @@ export const PRODUCT_DUMMY: Product = {
   favorites: 8,
   views: 63,
   status: 'CLOSED',
+  tradeLocation: '서울특별시 강남구 역삼동',
 };

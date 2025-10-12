@@ -9,6 +9,7 @@ interface ProductCard {
 
 interface Product {
   id: string;
+  uuid: string;
   title: string;
   thumbnail: string;
   images: string[];
@@ -18,4 +19,5 @@ interface Product {
   favorites: number;
   views: number;
   status: AuctionStatus;
+  tradeLocation: string;
 }
