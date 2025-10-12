@@ -1,7 +1,6 @@
 'use client';
 
 import axios from 'axios';
-
 import { API_BASE_URL } from '@/shared/config/env';
 import { useTokenStore } from '@/shared/store/token';
 

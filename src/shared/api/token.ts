@@ -1,7 +1,6 @@
 'use server';
 
 import { cookies } from 'next/headers';
-
 import { ACCESS_TOKEN } from '@/shared/config/env';
 
 export const getToken = async () => {
