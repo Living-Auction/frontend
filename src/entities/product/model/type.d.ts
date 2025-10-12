@@ -20,4 +20,5 @@ interface Product {
   views: number;
   status: AuctionStatus;
   tradeLocation: string;
+  desc: string;
 }

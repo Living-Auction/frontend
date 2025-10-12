@@ -22,4 +22,5 @@ export const PRODUCT_DUMMY: Product = {
   views: 63,
   status: 'CLOSED',
   tradeLocation: '서울특별시 강남구 역삼동',
+  desc: '직접 기른 캣닢을 한잎한잎 갈아 만든 캣휠입니다.\n\n저희 집 고양이는 이제 질렸는지 잘 안 쓰네요.\n상태는 아주 좋습니다. (사진 참고)\n\n    - 생활기스 약간 있음\n    - 캣닢향은 아직 진하게 남아있음\n\n입찰 안 하면 손해니까 빨리 하세요',
 };
