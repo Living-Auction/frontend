@@ -6,7 +6,7 @@
  */
 
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { EllipsisVertical } from 'lucide-react';
 import { tv } from 'tailwind-variants/lite';
 import useOnClickOutside from '@/shared/lib/hooks/use-onclick-outside';
@@ -33,9 +33,16 @@ const PopOver = ({ types }: { types: PopoverItemType[] }) => {
   // const itemId = params.id;
   // const path = pathname.split('/')[1];
 
+  useEffect(() => {
+    if (!isOpen) {
+      triggerRef.current?.focus();
+    }
+  }, [isOpen]);
+
   useOnClickOutside(buttonRef, () => {
-    setIsOpen(false);
-    triggerRef.current?.focus();
+    if (isOpen) {
+      setIsOpen(false);
+    }
   });
 
   const handleEdit = () => {
