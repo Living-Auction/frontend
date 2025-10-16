@@ -1,3 +1,4 @@
+import ErrorMessage from '@entities/auction-form/ui/error-message';
 import { useFormContext } from 'react-hook-form';
 
 const InputDescription = () => {
@@ -15,7 +16,7 @@ const InputDescription = () => {
         className='h-30 resize-none border border-gray-300 rounded-md px-3 py-2 placeholder:text-gray-500 placeholder:font-mediumm placeholder:text-body focus:outline-gray-900 focus:outline-1'
         placeholder='경매 상품에 대한 설명을 입력해주세요.'
       />
-      {error && <span className='text-negative-900 text-caption'>{error}</span>}
+      {error && <ErrorMessage error={error} />}
     </div>
   );
 };

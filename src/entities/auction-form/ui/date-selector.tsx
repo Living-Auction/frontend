@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { SELECT_END_DATE_OPTION } from '@entities/auction-form/config/constants';
+import ErrorMessage from '@entities/auction-form/ui/error-message';
 import { AuctionFormData } from '@features/auction-form/model/schema';
 import { ChevronDown } from 'lucide-react';
 import { useFormContext } from 'react-hook-form';
@@ -115,10 +116,7 @@ const DateSelector = ({ disabled = false }: SelectDateProps) => {
           </>
         )}
       </div>
-
-      {errors.endDate && (
-        <span className='text-negative-900 text-caption'>{errors.endDate.message}</span>
-      )}
+      {errors.endDate && <ErrorMessage error={errors.endDate.message} />}
     </div>
   );
 };

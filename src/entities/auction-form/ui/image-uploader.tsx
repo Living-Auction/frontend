@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import ErrorMessage from '@entities/auction-form/ui/error-message';
 import { AuctionFormData } from '@features/auction-form/model/schema';
 import { ImagePlus, X } from 'lucide-react';
 import { useFormContext } from 'react-hook-form';
@@ -90,9 +91,7 @@ const ImageUploader = () => {
         className='hidden'
       />
 
-      {errors.images && (
-        <span className='text-negative-900 text-caption'>{errors.images.message}</span>
-      )}
+      {errors.images && <ErrorMessage error={errors.images.message} />}
     </div>
   );
 };
