@@ -2,6 +2,7 @@ import Carousel from '@widgets/carousel/ui/carousel';
 import AuctionDetailHeader from '@widgets/header/ui/auction-detail';
 import { PRODUCT_DUMMY } from '@/entities/product/model/constants';
 import { ProfileCard } from '@/entities/user/ui/profile-card';
+import ProductBidding from '@/widgets/footer/ui/product-bidding';
 import ProductInfo from '@/widgets/product/ui/product-info';
 import ProductOverview from '@/widgets/product/ui/product-overview';
 
@@ -13,7 +14,7 @@ const AuctionDetail = () => {
     <>
       <AuctionDetailHeader />
       <Carousel auctionId={id} name={title} />
-      <article className='space-y-1'>
+      <article className='mb-24 w-full space-y-1 block bg-gray-100'>
         <ProductOverview
           status={status}
           title={title}
@@ -25,8 +26,8 @@ const AuctionDetail = () => {
         />
         <ProfileCard uuid={uuid} />
         <ProductInfo desc={desc} />
-        <footer>bid-banner</footer>
       </article>
+      <ProductBidding />
     </>
   );
 };

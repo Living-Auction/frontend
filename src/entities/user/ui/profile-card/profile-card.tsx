@@ -24,7 +24,7 @@ const ProfileCard = ({ uuid }: ProfileCardProps) => {
   };
 
   return (
-    <section className='flex w-full bg-background p-4 items-center'>
+    <section className='flex w-full bg-background p-4 items-center shadow-sm'>
       <button
         type='button'
         onClick={goProfileByUuidHandler}
