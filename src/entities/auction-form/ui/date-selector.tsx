@@ -21,7 +21,7 @@ const selectStyles = tv({
   variants: {
     disabled: {
       true: {
-        button: 'bg-gray-50 border-gray-300 cursor-not-allowed',
+        button: 'bg-gray-100 border-gray-300 cursor-not-allowed',
         text: 'text-gray-300',
         icon: 'text-gray-300',
       },

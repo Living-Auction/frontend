@@ -10,7 +10,7 @@ interface AvatarProps {
 }
 
 const AvatarStyle = tv({
-  base: 'aspect-square overflow-hidden rounded-full bg-gray-50',
+  base: 'aspect-square overflow-hidden rounded-full bg-gray-100',
   variants: { size: { basic: 'w-10', sm: 'w-7', lg: 'w-30' } },
 });
 
