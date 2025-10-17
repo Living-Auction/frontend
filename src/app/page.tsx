@@ -8,7 +8,7 @@ import MainHeader from '@/widgets/header/ui/main';
 
 export default function Home() {
   return (
-    <div className='relative overflow-hidden bg-background md:max-w-md mx-auto min-h-screen w-full flex flex-col'>
+    <>
       <MainHeader />
       <main className='mt-13 mb-22 gap-6 flex flex-col px-4 py-2 w-full overflow-y-auto overscroll-contain'>
         <Categories />
@@ -18,6 +18,6 @@ export default function Home() {
         <LatestProductList />
       </main>
       <Navigation />
-    </div>
+    </>
   );
 }
