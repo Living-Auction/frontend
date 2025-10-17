@@ -27,7 +27,7 @@ const ProductOverview = ({
   const resultLocation = SplitedLocation.join(' ');
 
   return (
-    <section className='bg-background p-4'>
+    <section className='bg-background p-4 shadow-sm'>
       <ProductStatusBadge status={status} />
       <h3 className='text-subtitle font-bold text-ellipsis line-clamp-2 my-3'>{title}</h3>
       <div className='flex items-center w-full justify-between mb-6'>
