@@ -20,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang='ko' className={`${pretendard.variable} h-full bg-background`}>
       <body className={`${pretendard.className} h-full text-foreground bg-gray-100`}>
-        {children}
+        <div className='relative overflow-hidden bg-background md:max-w-md mx-auto min-h-screen w-full flex flex-col'>
+          {children}
+        </div>
       </body>
     </html>
   );
