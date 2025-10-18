@@ -11,10 +11,10 @@ const AuctionEdit = () => {
   };
 
   return (
-    <div className='bg-background min-h-screen flex flex-col'>
+    <>
       <AuctionFormHeader title='경매 수정' />
       <AuctionForm mode='edit' defaultValues={mockData} />
-    </div>
+    </>
   );
 };
 
