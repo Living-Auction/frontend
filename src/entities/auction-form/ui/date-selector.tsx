@@ -2,7 +2,10 @@
 
 import { useState } from 'react';
 import { SELECT_END_DATE_OPTION } from '@entities/auction-form/config/constants';
+import ErrorMessage from '@entities/auction-form/ui/error-message';
+import { AuctionFormData } from '@features/auction-form/model/schema';
 import { ChevronDown } from 'lucide-react';
+import { useFormContext } from 'react-hook-form';
 import { tv } from 'tailwind-variants';
 
 const selectStyles = tv({
@@ -53,27 +56,34 @@ interface SelectDateProps {
 }
 
 const DateSelector = ({ disabled = false }: SelectDateProps) => {
+  const {
+    setValue,
+    watch,
+    formState: { errors },
+  } = useFormContext<AuctionFormData>();
+
+  const selectedValue = watch('endDate');
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState('1일 뒤 경매 종료 (셀렉트박스로)');
 
   const styles = selectStyles({ disabled, isOpen });
 
   const handleSelect = (option: string) => {
     if (disabled) return;
-    setSelectedValue(option);
+    setValue('endDate', option, { shouldValidate: true });
     setIsOpen(false);
   };
 
   const handleToggle = () => {
     if (disabled) return;
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   return (
-    <div className='flex flex-col gap-1.5'>
-      <label id='input-title' className='text-body font-bold text-gray-900'>
+    <div className='flex flex-col gap-1.5 relative'>
+      <label htmlFor='endDate' className='text-body font-bold text-gray-900'>
         마감 시간
       </label>
+
       <div className='relative'>
         <button
           type='button'
@@ -81,7 +91,7 @@ const DateSelector = ({ disabled = false }: SelectDateProps) => {
           disabled={disabled}
           className={styles.button()}
         >
-          <span className={styles.text()}>{selectedValue}</span>
+          <span className={styles.text()}>{selectedValue || '마감 시간을 선택해주세요'}</span>
           <ChevronDown size={20} className={styles.icon()} />
         </button>
 
@@ -94,7 +104,9 @@ const DateSelector = ({ disabled = false }: SelectDateProps) => {
                   <button
                     type='button'
                     onClick={() => handleSelect(option)}
-                    className={styles.option({ isSelected: selectedValue === option })}
+                    className={styles.option({
+                      isSelected: selectedValue === option,
+                    })}
                   >
                     {option}
                   </button>
@@ -104,6 +116,7 @@ const DateSelector = ({ disabled = false }: SelectDateProps) => {
           </>
         )}
       </div>
+      {errors.endDate && <ErrorMessage error={errors.endDate.message} />}
     </div>
   );
 };
