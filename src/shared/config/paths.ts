@@ -6,7 +6,7 @@ export const paths = {
     return '/favorite';
   },
   createAuction() {
-    return '/create/auction';
+    return '/auction/create';
   },
   chat() {
     return '/chat';
