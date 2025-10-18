@@ -1,10 +1,10 @@
+import { PRODUCT_DUMMY } from '@entities/product/model/constants';
+import { ProfileCard } from '@entities/user/ui/profile-card';
 import Carousel from '@widgets/carousel/ui/carousel';
+import ProductBidding from '@widgets/footer/ui/product-bidding';
 import AuctionDetailHeader from '@widgets/header/ui/auction-detail';
-import { PRODUCT_DUMMY } from '@/entities/product/model/constants';
-import { ProfileCard } from '@/entities/user/ui/profile-card';
-import ProductBidding from '@/widgets/footer/ui/product-bidding';
-import ProductInfo from '@/widgets/product/ui/product-info';
-import ProductOverview from '@/widgets/product/ui/product-overview';
+import ProductInfo from '@widgets/product/ui/product-info';
+import ProductOverview from '@widgets/product/ui/product-overview';
 
 const AuctionDetail = () => {
   const { title, id, status, views, favorites, startDate, endDate, uuid, tradeLocation, desc } =
