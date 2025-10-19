@@ -3,12 +3,12 @@ import { useEffect, RefObject } from 'react';
 type event = MouseEvent | TouchEvent;
 
 const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
-  ref: RefObject<T>,
+  ref: RefObject<T | null>,
   handler: (event: event) => void,
 ) => {
   useEffect(() => {
     const listener = (event: event) => {
-      const el = ref.current;
+      const el = ref?.current;
       if (!el || el.contains(event.target as Node)) {
         return;
       }
