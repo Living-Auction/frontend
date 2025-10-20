@@ -5,7 +5,7 @@ interface useDrawerProps {
   defaultOpen?: boolean;
 }
 
-const useDrawer = ({ defaultOpen = false }: useDrawerProps = {}) => {
+export const useDrawer = ({ defaultOpen = false }: useDrawerProps = {}) => {
   const [isOpen, setIsOpen] = useState<boolean>(defaultOpen);
   const drawerRef = useRef<HTMLElement>(null);
 
@@ -17,5 +17,3 @@ const useDrawer = ({ defaultOpen = false }: useDrawerProps = {}) => {
 
   return { isOpen, openDrawer, closeDrawer, toggleDrawer, drawerRef };
 };
-
-export default useDrawer;

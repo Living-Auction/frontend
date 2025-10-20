@@ -50,7 +50,7 @@ const Navigation = () => {
   const pathname = usePathname();
 
   return (
-    <BaseFooter>
+    <BaseFooter className={`flex justify-between items-center`}>
       {NAV_LINKS.map((link, idx) => {
         const isActive = pathname === link.href;
         const IconComponent = link.icon;
