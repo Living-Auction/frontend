@@ -23,7 +23,7 @@ const BuyNowButton = ({ productId, buyNowPrice }: BuyNowButtonProps) => {
     >
       <HandCoins />
       <p className={cn(`w-full`)}>
-        지금{' '}
+        지금
         <span className={cn(`text-primary-900 font-bold`)}>{buyNowPrice.toLocaleString()}원</span>에
         즉시구매 하기
       </p>
