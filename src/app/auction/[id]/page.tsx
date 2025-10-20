@@ -7,8 +7,19 @@ import ProductInfo from '@widgets/product/ui/product-info';
 import ProductOverview from '@widgets/product/ui/product-overview';
 
 const AuctionDetail = () => {
-  const { title, id, status, views, favorites, startDate, endDate, uuid, tradeLocation, desc } =
-    PRODUCT_DUMMY;
+  const {
+    title,
+    id,
+    status,
+    views,
+    favorites,
+    startDate,
+    endDate,
+    uuid,
+    tradeLocation,
+    desc,
+    currentPrice,
+  } = PRODUCT_DUMMY;
 
   return (
     <>
@@ -27,7 +38,7 @@ const AuctionDetail = () => {
         <ProfileCard uuid={uuid} />
         <ProductInfo desc={desc} />
       </article>
-      <ProductBidding />
+      <ProductBidding currentPrice={currentPrice} />
     </>
   );
 };

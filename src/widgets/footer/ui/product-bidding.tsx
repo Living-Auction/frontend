@@ -7,12 +7,17 @@ import { useDrawer } from '@shared/lib/hooks/use-drawer';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import { cn } from 'tailwind-variants/lite';
+import BuyNowButton from '@/features/but-now/ui/buy-now-button';
 import BaseFooter from './base';
 
-const ProductBidding = () => {
-  const CURRENT_BID = 34000;
+interface ProductBiddingProps {
+  currentPrice: number;
+  isBuyNowEnabled?: boolean;
+}
+
+const ProductBidding = ({ currentPrice, isBuyNowEnabled = false }: ProductBiddingProps) => {
   const MIN_BID_INCREMENT = 1000;
-  const minNextBid = CURRENT_BID + MIN_BID_INCREMENT;
+  const minNextBid = currentPrice + MIN_BID_INCREMENT;
 
   const [bidAmount, setBidAmount] = useState<string>(String(minNextBid));
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
@@ -43,7 +48,8 @@ const ProductBidding = () => {
   return (
     <>
       <BaseFooter className='w-full flex flex-col justify-end'>
-        <form onSubmit={handleSubmit} className='w-full flex flex-col gap-2'>
+        {isBuyNowEnabled && <BuyNowButton productId='1234' buyNowPrice={90000} />}
+        <form onSubmit={handleSubmit} className='w-full flex flex-col'>
           <AnimatePresence>
             {isOpen && (
               <motion.div
@@ -53,7 +59,7 @@ const ProductBidding = () => {
                   height: 'auto',
                   opacity: 1,
                   transition: {
-                    height: { duration: 0.4, type: 'spring', ease: EASE_OUT_QUINT },
+                    height: { duration: 0.45, type: 'spring', ease: EASE_OUT_QUINT },
                     opacity: { duration: 0.2, ease: 'linear' },
                   },
                 }}
@@ -61,14 +67,14 @@ const ProductBidding = () => {
                   height: 0,
                   opacity: 0,
                   transition: {
-                    height: { duration: 0.3, type: 'spring', ease: 'easeOut' },
+                    height: { duration: 0.25, ease: EASE_OUT_QUINT },
                     opacity: { duration: 0.15, ease: 'easeOut' },
                   },
                 }}
                 className='overflow-hidden w-full flex flex-col justify-end items-center gap-2'
               >
                 <BidForm
-                  currentBid={CURRENT_BID}
+                  currentBid={currentPrice}
                   bidAmount={bidAmount}
                   setBidAmount={setBidAmount}
                 />
@@ -86,7 +92,7 @@ const ProductBidding = () => {
             )}
           </AnimatePresence>
           <BidBar
-            currentBid={CURRENT_BID}
+            currentBid={currentPrice}
             initialFavorite={false}
             isFormOpen={isOpen}
             onBidButtonClick={handleOpenForm}
