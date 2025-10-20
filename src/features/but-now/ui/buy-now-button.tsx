@@ -1,3 +1,5 @@
+'use client';
+
 import { ChevronRight, HandCoins } from 'lucide-react';
 import { cn } from 'tailwind-variants/lite';
 
