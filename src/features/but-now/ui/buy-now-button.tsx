@@ -18,7 +18,7 @@ const BuyNowButton = ({ productId, buyNowPrice }: BuyNowButtonProps) => {
       aria-label='즉시 구매'
       onClick={handleButNow}
       className={cn(
-        `flex w-full items-center justify-between gap-2 bg-primary-100 py-2 px-3 rounded-sm text-body text-gray-900 [&_svg]:stroke-primary-900 [&_svg]:w-6 text-left font-medium`,
+        `flex w-full items-center justify-between gap-2 bg-primary-100 py-2 px-3 rounded-sm text-body text-gray-900 [&_svg]:stroke-primary-900 [&_svg]:w-6 text-left font-medium mt-2`,
       )}
     >
       <HandCoins />
