@@ -19,7 +19,7 @@ const BidBar = ({
   onBidButtonClick,
 }: BidBarProps) => {
   return (
-    <div className='w-full flex justify-between items-center gap-2 pt-2'>
+    <div className='w-full flex justify-between items-center gap-2 z-50 relativ'>
       <FavoriteButton initialFavorite={initialFavorite} size='lg' />
       <div className='shrink-1 w-full ml-2'>
         <p className='text-body leading-none mb-1 font-regular text-gray-700'>현재 입찰가</p>
