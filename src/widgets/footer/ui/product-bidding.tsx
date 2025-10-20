@@ -12,10 +12,10 @@ import BaseFooter from './base';
 
 interface ProductBiddingProps {
   currentPrice: number;
-  isBuyNowEnabled?: boolean;
+  buyNowPrice?: number | null;
 }
 
-const ProductBidding = ({ currentPrice, isBuyNowEnabled = false }: ProductBiddingProps) => {
+const ProductBidding = ({ currentPrice, buyNowPrice = null }: ProductBiddingProps) => {
   const MIN_BID_INCREMENT = 1000;
   const minNextBid = currentPrice + MIN_BID_INCREMENT;
 
@@ -48,7 +48,7 @@ const ProductBidding = ({ currentPrice, isBuyNowEnabled = false }: ProductBiddin
   return (
     <>
       <BaseFooter className='w-full flex flex-col justify-end'>
-        {isBuyNowEnabled && <BuyNowButton productId='1234' buyNowPrice={90000} />}
+        {buyNowPrice && <BuyNowButton productId='1234' buyNowPrice={buyNowPrice} />}
         <form onSubmit={handleSubmit} className='w-full flex flex-col'>
           <AnimatePresence>
             {isOpen && (

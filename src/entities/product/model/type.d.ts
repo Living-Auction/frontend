@@ -16,6 +16,7 @@ interface Product {
   startDate: string;
   endDate: string;
   currentPrice: number;
+  buyNowPrice: number;
   favorites: number;
   views: number;
   status: AuctionStatus;

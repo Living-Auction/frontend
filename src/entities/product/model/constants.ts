@@ -18,6 +18,7 @@ export const PRODUCT_DUMMY: Product = {
   startDate: '2025-10-06T16:44:00Z',
   endDate: '2025-10-07T16:00:00Z',
   currentPrice: 123999,
+  buyNowPrice: 320000,
   favorites: 8,
   views: 63,
   status: 'CLOSED',

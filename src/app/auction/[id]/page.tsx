@@ -19,6 +19,7 @@ const AuctionDetail = () => {
     tradeLocation,
     desc,
     currentPrice,
+    buyNowPrice,
   } = PRODUCT_DUMMY;
 
   return (
@@ -38,7 +39,7 @@ const AuctionDetail = () => {
         <ProfileCard uuid={uuid} />
         <ProductInfo desc={desc} />
       </article>
-      <ProductBidding currentPrice={currentPrice} />
+      <ProductBidding currentPrice={currentPrice} buyNowPrice={buyNowPrice} />
     </>
   );
 };
