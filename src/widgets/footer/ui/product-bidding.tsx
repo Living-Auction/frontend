@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import BuyNowButton from '@/features/but-now/ui/buy-now-button';
 import BidBar from '@/features/place-bid/ui/bid-bar';
 import BidForm from '@/features/place-bid/ui/bid-form';
 import BaseFooter from './base';
@@ -43,6 +44,7 @@ const ProductBidding = () => {
     <>
       <BaseFooter className='items-end'>
         <form onSubmit={handleSubmit} className='w-full'>
+          <BuyNowButton productId='1234' buyNowPrice={90000} />
           {isFormOpen && (
             <BidForm currentBid={CURRENT_BID} bidAmount={bidAmount} setBidAmount={setBidAmount} />
           )}
