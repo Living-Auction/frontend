@@ -15,7 +15,7 @@ interface Product {
   images: string[];
   startDate: string;
   endDate: string;
-  currentPrice: string;
+  currentPrice: number;
   favorites: number;
   views: number;
   status: AuctionStatus;
