@@ -38,7 +38,7 @@ const BidForm = ({ currentBid, bidAmount, setBidAmount }: BidFormProps) => {
   };
 
   return (
-    <div className={cn(`block space-y-2 w-full my-3`)}>
+    <div className={cn(`block space-y-2 w-full mt-4 mb-2`)}>
       <BidInput
         value={bidAmount}
         showResetButton={isModified}
