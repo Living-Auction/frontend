@@ -29,7 +29,8 @@ const BidBar = ({
       </div>
       <Button
         type={isFormOpen ? 'submit' : 'button'}
-        className='shrink-0 w-30'
+        size={'md'}
+        className='shrink-0 max-w-30 w-1/3 !text-bodytitle font-medium'
         color={isDisabled ? 'disabled' : 'primary'}
         onClick={!isFormOpen ? (e) => onBidButtonClick(e) : undefined}
         disabled={isFormOpen && isDisabled}

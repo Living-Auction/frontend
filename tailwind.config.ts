@@ -44,7 +44,7 @@ const config = {
         sans: ['var(--font-pretendard)', 'sans-serif'],
       },
       fontSize: {
-        title: ['22px', { lineHeight: '1.4', fontWeight: '700' }],
+        title: ['20px', { lineHeight: '1.4', fontWeight: '700' }],
         subtitle: '18px',
         bodytitle: '16px',
         body: '14px',

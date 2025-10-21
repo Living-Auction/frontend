@@ -59,15 +59,15 @@ const ProductBidding = ({ currentPrice, buyNowPrice = null }: ProductBiddingProp
                   height: 'auto',
                   opacity: 1,
                   transition: {
-                    height: { duration: 0.45, type: 'spring', ease: EASE_OUT_QUINT },
-                    opacity: { duration: 0.2, ease: 'linear' },
+                    height: { duration: 0.25, ease: EASE_OUT_QUINT },
+                    opacity: { duration: 0.3, ease: 'linear' },
                   },
                 }}
                 exit={{
                   height: 0,
                   opacity: 0,
                   transition: {
-                    height: { duration: 0.25, ease: EASE_OUT_QUINT },
+                    height: { duration: 0.2, ease: EASE_OUT_QUINT },
                     opacity: { duration: 0.15, ease: 'easeOut' },
                   },
                 }}

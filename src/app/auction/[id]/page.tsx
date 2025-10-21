@@ -26,7 +26,7 @@ const AuctionDetail = () => {
     <>
       <AuctionDetailHeader />
       <Carousel auctionId={id} name={title} />
-      <article className='mb-24 w-full space-y-1 block bg-gray-100'>
+      <article className='mb-40 w-full space-y-1 block bg-gray-100'>
         <ProductOverview
           status={status}
           title={title}
