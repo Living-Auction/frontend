@@ -44,7 +44,7 @@ const config = {
         sans: ['var(--font-pretendard)', 'sans-serif'],
       },
       fontSize: {
-        title: ['22px', { lineHeight: '1.4', fontWeight: '700' }],
+        title: ['20px', { lineHeight: '1.4', fontWeight: '700' }],
         subtitle: '18px',
         bodytitle: '16px',
         body: '14px',
@@ -59,7 +59,7 @@ const config = {
         lg: '0 12px 24px 0 rgba(0, 0, 0, 0.2)',
         basic: '0 4px 16px 0 rgba(0, 0, 0, 0.08)',
         sm: '0 2px 4px 0 rgba(0, 0, 0, 0.04)',
-        drawer: '0 -24px 40px 0 rgba(0, 0, 0, .12)',
+        drawer: '0 -2px 10px 4px rgba(0, 0, 0, .08)',
       },
     },
   },

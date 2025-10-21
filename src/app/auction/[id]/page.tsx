@@ -7,14 +7,26 @@ import ProductInfo from '@widgets/product/ui/product-info';
 import ProductOverview from '@widgets/product/ui/product-overview';
 
 const AuctionDetail = () => {
-  const { title, id, status, views, favorites, startDate, endDate, uuid, tradeLocation, desc } =
-    PRODUCT_DUMMY;
+  const {
+    title,
+    id,
+    status,
+    views,
+    favorites,
+    startDate,
+    endDate,
+    uuid,
+    tradeLocation,
+    desc,
+    currentPrice,
+    buyNowPrice,
+  } = PRODUCT_DUMMY;
 
   return (
     <>
       <AuctionDetailHeader />
       <Carousel auctionId={id} name={title} />
-      <article className='mb-24 w-full space-y-1 block bg-gray-100'>
+      <article className='mb-40 w-full space-y-1 block bg-gray-100'>
         <ProductOverview
           status={status}
           title={title}
@@ -27,7 +39,7 @@ const AuctionDetail = () => {
         <ProfileCard uuid={uuid} />
         <ProductInfo desc={desc} />
       </article>
-      <ProductBidding />
+      <ProductBidding currentPrice={currentPrice} buyNowPrice={buyNowPrice} />
     </>
   );
 };
