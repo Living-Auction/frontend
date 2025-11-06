@@ -29,4 +29,27 @@ server.interceptors.request.use(async (config) => {
   return config;
 });
 
+server.interceptors.response.use(
+  (res) => res,
+  async (error) => {
+    const { response, config } = error;
+
+    if (response?.status === 401 && !config._retry) {
+      config._retry = true;
+
+      const refreshRes = await axios.post(
+        `${baseURL}/auth/reissueToken`,
+        {},
+        { withCredentials: true },
+      );
+      const newAccessToken = refreshRes.data.accessToken;
+
+      config.headers.Authorization = `Bearer ${newAccessToken}`;
+      return server(config);
+    }
+
+    throw error;
+  },
+);
+
 export default server;
