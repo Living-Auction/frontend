@@ -1,10 +1,11 @@
+import { DOMAIN_NAME, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '@shared/config/env';
 import axios from 'axios';
 import qs from 'qs';
 
 export async function handleGoogleOAuth(code: string) {
-  const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
-  const clientSecret = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET;
-  const redirectUri = `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/callback/google`;
+  const clientId = GOOGLE_CLIENT_ID;
+  const clientSecret = GOOGLE_CLIENT_SECRET;
+  const redirectUri = `${DOMAIN_NAME}/callback/google`;
 
   if (!clientId || !clientSecret) {
     throw new Error('Google OAuth client credentials are missing.');

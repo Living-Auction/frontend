@@ -3,11 +3,11 @@ import type { AxiosError } from 'axios';
 
 export const syncUserToDB = async (user: GoogleUser) => {
   try {
-    const res = await client.post('/users/oauth', {
+    const res = await client.post('/auth/oauthLogin', {
       email: user.email,
-      name: user.name,
       picture: user.picture,
       provider: 'google',
+      providerId: user.sub,
     });
 
     if (res.status >= 200 && res.status < 300) {
@@ -19,7 +19,12 @@ export const syncUserToDB = async (user: GoogleUser) => {
     }
   } catch (error) {
     const err = error as AxiosError;
-    console.error('User sync failed:', err.response?.data || err.message);
+    console.error('User sync failed:', {
+      status: err.response?.status,
+      data: err.response?.data,
+      headers: err.response?.headers,
+      url: err.config?.url,
+    });
     throw new Error('서버와의 동기화에 실패했습니다.');
   }
 };

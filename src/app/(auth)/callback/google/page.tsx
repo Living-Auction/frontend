@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { syncUserToDB } from '@features/auth/api/sync-user';
 import { handleGoogleOAuth } from '@features/auth/model/google-auth.server';
+import { useTokenStore } from '@shared/store/token';
 
 export default function GoogleCallbackPage() {
   const router = useRouter();
@@ -11,6 +12,7 @@ export default function GoogleCallbackPage() {
   const code = params.get('code');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const setAccessToken = useTokenStore((state) => state.setToken);
 
   useEffect(() => {
     if (!code) {
@@ -22,8 +24,14 @@ export default function GoogleCallbackPage() {
     (async () => {
       try {
         const user = await handleGoogleOAuth(code);
-        await syncUserToDB(user);
-        router.push('/');
+        const tokenData = await syncUserToDB(user);
+
+        if (tokenData?.accessToken) {
+          setAccessToken(tokenData.accessToken);
+          router.push('/');
+        } else {
+          throw new Error('서버에서 토큰을 받지 못했습니다.');
+        }
       } catch (err) {
         console.error('OAuth 로그인 실패:', err);
         setError('로그인에 실패했습니다. 잠시 후 다시 시도해주세요.');
@@ -31,7 +39,7 @@ export default function GoogleCallbackPage() {
         setLoading(false);
       }
     })();
-  }, [code, router]);
+  }, [code, router, setAccessToken]);
 
   if (loading) {
     return (

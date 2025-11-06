@@ -3,4 +3,5 @@ interface GoogleUser {
   name: string;
   picture: string;
   provider: 'google';
+  sub: string;
 }
