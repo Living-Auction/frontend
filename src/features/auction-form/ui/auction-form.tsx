@@ -1,11 +1,13 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import Button from '@component/button';
 import DateSelector from '@entities/auction-form/ui/date-selector';
 import ImageUploader from '@entities/auction-form/ui/image-uploader';
 import InputDescription from '@entities/auction-form/ui/input-description';
 import InputTitle from '@entities/auction-form/ui/input-title';
 import { useAuctionForm } from '@features/auction-form/model/hooks';
+import { useCreateAuction } from '@features/auction-form/model/useCreatAuction';
 import { FormProvider } from 'react-hook-form';
 
 interface Props {
@@ -24,9 +26,16 @@ const AuctionForm = ({ mode, defaultValues }: Props) => {
     defaultValues,
   });
 
-  // TODO: api 요청 로직 추가
-  const onSubmit = methods.handleSubmit((data) => {
-    console.log(data);
+  const router = useRouter();
+  const { submitAuction, loading } = useCreateAuction();
+
+  const onSubmit = methods.handleSubmit(async (data) => {
+    try {
+      await submitAuction(data);
+      router.push('/');
+    } catch (err) {
+      console.error('Auction submission failed:', err);
+    }
   });
 
   return (
@@ -38,8 +47,8 @@ const AuctionForm = ({ mode, defaultValues }: Props) => {
           <ImageUploader />
           <DateSelector disabled={mode === 'edit'} />
         </div>
-        <Button type='submit' className='w-full'>
-          {buttonName}
+        <Button type='submit' className='w-full' disabled={loading}>
+          {loading ? '등록 중...' : buttonName}
         </Button>
       </form>
     </FormProvider>
