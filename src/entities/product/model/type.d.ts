@@ -1,20 +1,13 @@
 export type AuctionStatus = 'PENDING' | 'ACTIVE' | 'CLOSED';
 
-interface ProductCard {
-  title: string;
-  thumbnail: string;
-  endDate: '2025.12.31';
-  currentPrice: string;
-}
-
 interface Product {
   id: string;
   uuid: string;
   title: string;
-  thumbnail: string;
+  thumbnailUrl: string;
   images: string[];
-  startDate: string;
-  endDate: string;
+  startTime: string;
+  endTime: string;
   currentPrice: number;
   buyNowPrice: number;
   favorites: number;
