@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { SELECT_END_DATE_OPTION } from '@entities/auction-form/config/constants';
+import { END_DATE_MAP } from '@entities/auction-form/config/constants';
 import ErrorMessage from '@entities/auction-form/ui/error-message';
 import { AuctionFormData } from '@features/auction-form/model/schema';
 import { ChevronDown } from 'lucide-react';
@@ -62,14 +62,14 @@ const DateSelector = ({ disabled = false }: SelectDateProps) => {
     formState: { errors },
   } = useFormContext<AuctionFormData>();
 
-  const selectedValue = watch('endDate');
+  const selectedValue = watch('auctionData.endTime');
   const [isOpen, setIsOpen] = useState(false);
 
   const styles = selectStyles({ disabled, isOpen });
 
-  const handleSelect = (option: string) => {
-    if (disabled) return;
-    setValue('endDate', option, { shouldValidate: true });
+  const handleSelect = (label: keyof typeof END_DATE_MAP) => {
+    const numericValue = END_DATE_MAP[label];
+    setValue('auctionData.endTime', numericValue, { shouldValidate: true });
     setIsOpen(false);
   };
 
@@ -98,17 +98,18 @@ const DateSelector = ({ disabled = false }: SelectDateProps) => {
         {isOpen && !disabled && (
           <>
             <div className='fixed inset-0 z-10' onClick={() => setIsOpen(false)} />
+
             <ul className={styles.dropdown()}>
-              {SELECT_END_DATE_OPTION.map((option, index) => (
-                <li key={index}>
+              {(Object.keys(END_DATE_MAP) as Array<keyof typeof END_DATE_MAP>).map((label) => (
+                <li key={label}>
                   <button
                     type='button'
-                    onClick={() => handleSelect(option)}
+                    onClick={() => handleSelect(label)}
                     className={styles.option({
-                      isSelected: selectedValue === option,
+                      isSelected: selectedValue === END_DATE_MAP[label],
                     })}
                   >
-                    {option}
+                    {label}
                   </button>
                 </li>
               ))}
@@ -116,7 +117,7 @@ const DateSelector = ({ disabled = false }: SelectDateProps) => {
           </>
         )}
       </div>
-      {errors.endDate && <ErrorMessage error={errors.endDate.message} />}
+      {errors.auctionData?.endTime && <ErrorMessage error={errors.auctionData.endTime.message} />}
     </div>
   );
 };

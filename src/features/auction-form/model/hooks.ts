@@ -10,11 +10,15 @@ export const useAuctionForm = ({ defaultValues }: UseAuctionFormOptions = {}) =>
   return useForm<AuctionFormData>({
     resolver: zodResolver(auctionSchema),
     defaultValues: {
-      title: '',
-      description: '',
-      images: [],
-      endDate: '',
-      ...defaultValues,
+      auctionData: {
+        title: '',
+        description: '',
+        endTime: 0,
+        startPrice: 0,
+        minBidUnit: 100,
+        ...(defaultValues?.auctionData ?? {}),
+      },
+      images: defaultValues?.images ?? [],
     },
   });
 };
