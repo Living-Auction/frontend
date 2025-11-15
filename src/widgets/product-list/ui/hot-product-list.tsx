@@ -1,4 +1,4 @@
-import { Product } from '@entities/product/model/type';
+import { ProductCardDto } from '@entities/product/model/type';
 import { getHot } from '@widgets/product-list/api/get-hot';
 import ProductCard from '@/entities/product/ui/product-card';
 
@@ -11,7 +11,7 @@ const HotProductList = async () => {
         우리동네 Hot한 경매
       </h2>
       <div className='flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 no-scrollbar'>
-        {products.map((product: Product) => (
+        {products.map((product: ProductCardDto) => (
           <div key={product.id} className='snap-start'>
             <ProductCard type='vertical' product={product} />
           </div>

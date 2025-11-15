@@ -1,4 +1,4 @@
-import { Product } from '@entities/product/model/type';
+import { ProductCardDto } from '@entities/product/model/type';
 import { formatDate } from '@shared/utils/format-date';
 import { tv } from 'tailwind-variants';
 import { TYPE_TO_SIZE } from '@/entities/product/model/constants';
@@ -25,13 +25,15 @@ const productCardStyle = tv({
 
 interface Props {
   type: 'vertical' | 'horizontal';
-  product: Product;
+  product: ProductCardDto;
 }
 
 const ProductCard = ({ type, product }: Props) => {
   const thumbnailSize = TYPE_TO_SIZE[type];
   const { base, info } = productCardStyle({ type });
-  const { title, thumbnailUrl, endTime, currentPrice } = product;
+  const { title, thumbnailUrl, endTime, price } = product;
+
+  console.log(product);
 
   return (
     <div className={base()}>
@@ -43,7 +45,7 @@ const ProductCard = ({ type, product }: Props) => {
             <span className='text-caption font-bold text-gray-500'>종료일</span>
             <span className='text-caption font-regular text-gray-500'>{formatDate(endTime)}</span>
           </div>
-          <span className='text-body font-bold'> 현재가 {currentPrice} 원</span>
+          <span className='text-body font-bold'> 현재가 {price} 원</span>
         </div>
       </div>
     </div>
