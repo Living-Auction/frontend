@@ -33,8 +33,6 @@ const ProductCard = ({ type, product }: Props) => {
   const { base, info } = productCardStyle({ type });
   const { title, thumbnailUrl, endTime, price } = product;
 
-  console.log(product);
-
   return (
     <div className={base()}>
       <ProductThumbnail thumbnailSize={thumbnailSize} thumbnail={thumbnailUrl} />
