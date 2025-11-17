@@ -1,21 +1,21 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import Button from '@component/button';
 import DateSelector from '@entities/auction-form/ui/date-selector';
 import ImageUploader from '@entities/auction-form/ui/image-uploader';
 import InputDescription from '@entities/auction-form/ui/input-description';
+import InputPrice from '@entities/auction-form/ui/input-price';
 import InputTitle from '@entities/auction-form/ui/input-title';
+import InputUnit from '@entities/auction-form/ui/input-unit';
 import { useAuctionForm } from '@features/auction-form/model/hooks';
+import { AuctionFormData } from '@features/auction-form/model/schema';
+import { useCreateAuction } from '@features/auction-form/model/useCreatAuction';
 import { FormProvider } from 'react-hook-form';
 
 interface Props {
   mode: 'create' | 'edit';
-  defaultValues?: {
-    title: string;
-    description: string;
-    images: File[];
-    endDate: string;
-  };
+  defaultValues?: AuctionFormData;
 }
 
 const AuctionForm = ({ mode, defaultValues }: Props) => {
@@ -24,9 +24,16 @@ const AuctionForm = ({ mode, defaultValues }: Props) => {
     defaultValues,
   });
 
-  // TODO: api 요청 로직 추가
-  const onSubmit = methods.handleSubmit((data) => {
-    console.log(data);
+  const router = useRouter();
+  const { submitAuction, loading } = useCreateAuction();
+
+  const onSubmit = methods.handleSubmit(async (data: AuctionFormData) => {
+    try {
+      await submitAuction(data);
+      router.push('/');
+    } catch (err) {
+      console.error('Auction submission failed:', err);
+    }
   });
 
   return (
@@ -36,10 +43,12 @@ const AuctionForm = ({ mode, defaultValues }: Props) => {
           <InputTitle />
           <InputDescription />
           <ImageUploader />
+          <InputPrice />
+          <InputUnit />
           <DateSelector disabled={mode === 'edit'} />
         </div>
-        <Button type='submit' className='w-full'>
-          {buttonName}
+        <Button type='submit' className='w-full' disabled={loading}>
+          {loading ? '등록 중...' : buttonName}
         </Button>
       </form>
     </FormProvider>
