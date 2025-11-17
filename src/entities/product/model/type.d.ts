@@ -1,25 +1,24 @@
 export type AuctionStatus = 'PENDING' | 'ACTIVE' | 'CLOSED';
 
-interface ProductCard {
+interface ProductCardDto {
+  id: string;
   title: string;
-  thumbnail: string;
-  endDate: '2025.12.31';
-  currentPrice: string;
+  thumbnailUrl: string;
+  endTime: string;
+  price: number;
 }
 
-interface Product {
-  id: string;
-  uuid: string;
-  title: string;
-  thumbnail: string;
-  images: string[];
-  startDate: string;
-  endDate: string;
+interface Product extends ProductCardDto {
+  createdAt: string;
+  updatedAt: string;
+  seller: User;
+  auctionType: string;
+  description: string;
+  startTime: string;
   currentPrice: number;
   buyNowPrice: number;
-  favorites: number;
+  category: string;
   views: number;
   status: AuctionStatus;
-  tradeLocation: string;
-  desc: string;
+  location: string;
 }
