@@ -31,11 +31,11 @@ interface Props {
 const ProductCard = ({ type, product }: Props) => {
   const thumbnailSize = TYPE_TO_SIZE[type];
   const { base, info } = productCardStyle({ type });
-  const { title, thumbnailUrl, endTime, price } = product;
+  const { id, title, thumbnailUrl, endTime, price } = product;
 
   return (
     <div className={base()}>
-      <ProductThumbnail thumbnailSize={thumbnailSize} thumbnail={thumbnailUrl} />
+      <ProductThumbnail id={id} thumbnailSize={thumbnailSize} thumbnail={thumbnailUrl} />
       <div className={info()}>
         <span className='text-body font-bold line-clamp-2'>{title}</span>
         <div className='flex flex-col gap-1'>

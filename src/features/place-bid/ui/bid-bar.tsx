@@ -4,7 +4,7 @@ import FavoriteButton from '@/features/favorite/ui/favorite-button';
 import Button from '@/shared/ui/component/button';
 
 interface BidBarProps {
-  currentBid: number;
+  // currentBid: number;
   initialFavorite: boolean;
   isFormOpen: boolean;
   onBidButtonClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -12,7 +12,7 @@ interface BidBarProps {
 }
 
 const BidBar = ({
-  currentBid,
+  // currentBid,
   initialFavorite,
   isFormOpen,
   isDisabled,
@@ -23,9 +23,9 @@ const BidBar = ({
       <FavoriteButton initialFavorite={initialFavorite} size='lg' />
       <div className='shrink-1 w-full ml-2'>
         <p className='text-body leading-none mb-1 font-regular text-gray-700'>현재 입찰가</p>
-        <p className='text-title font-bold text-primary-900 leading-none'>
-          {currentBid.toLocaleString()}
-        </p>
+        {/*<p className='text-title font-bold text-primary-900 leading-none'>*/}
+        {/*  {currentBid.toLocaleString()}*/}
+        {/*</p>*/}
       </div>
       <Button
         type={isFormOpen ? 'submit' : 'button'}
