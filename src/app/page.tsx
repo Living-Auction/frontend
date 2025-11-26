@@ -14,7 +14,7 @@ export default function Home() {
         <Categories />
         <HotProductList />
         <EndingSoonProductList />
-        <Carousel auctionId={''} name={''} />
+        <Carousel name={''} images={[]} />
         <LatestProductList />
       </main>
       <Navigation />

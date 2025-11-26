@@ -1,37 +1,17 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import CarouselIndicator from '@widgets/carousel/ui/indicator';
 import { motion } from 'framer-motion';
-import { getAuctionImagesById } from '@/widgets/carousel/api';
-import { ImageUrlType } from '@/widgets/carousel/model/type';
-import CarouselIndicator from './indicator';
 import { useCarousel } from '../lib/useCarousel';
 
 interface CarouselProps {
-  auctionId: string;
+  images: string[];
   name: string;
+  isLoading?: boolean;
 }
 
-const Carousel = ({ auctionId, name }: CarouselProps) => {
-  const [images, setImages] = useState<ImageUrlType[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
+const Carousel = ({ name, images, isLoading }: CarouselProps) => {
   const { currentIndex, goTo, handleSwipeEnd } = useCarousel({ totalItems: images.length });
-
-  useEffect(() => {
-    // Todo: 데이터 연결 시 상위에서 호출 후 props를 받는 형식으로 변경
-    const fetchImages = async () => {
-      setIsLoading(true);
-      try {
-        setImages(await getAuctionImagesById(auctionId));
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchImages();
-  }, [auctionId]);
 
   return (
     <div className='relative flex w-full max-w-lg flex-col items-center justify-center'>
